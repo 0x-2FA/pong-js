@@ -46,3 +46,23 @@ body{
 .bc-l-blue{
     background-color: var(--light-blue);
 }
+
+.c-white{
+    background-color: var(--whitish);
+}
+
+.c-vd-blue{
+    background-color: var(--very-dark-blue);
+}
+
+.c-d-blue{
+    background-color: var(--dark-blue);
+}
+
+.c-m-blue{
+    background-color: var(--medium-blue);
+}
+
+.c-l-blue{
+    background-color: var(--light-blue);
+}
