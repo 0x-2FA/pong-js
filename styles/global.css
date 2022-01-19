@@ -25,11 +25,24 @@ body{
 
 .flex{
   display: flex;
+  gap: 1em;
+}
+
+.flex-column{
+  flex-direction: column;
 }
 
 .flex-center-all{
   justify-content: center;
   align-items: center;
+}
+
+.medium-gap{
+  gap: 2em;
+}
+
+.large-gap{
+  gap: 4em;
 }
 
 .bc-white{
