@@ -1,68 +1,68 @@
 :root{
-    box-sizing: border-box;
-    --very-dark-blue: #0D1321;
-    --dark-blue: #1D2D44;
-    --medium-blue: #3E5C76;
-    --light-blue: #3E5C76;
-    --whitish: #F0EBD8;
+  box-sizing: border-box;
+  --very-dark-blue: #0D1321;
+  --dark-blue: #1D2D44;
+  --medium-blue: #3E5C76;
+  --light-blue: #3E5C76;
+  --whitish: #F0EBD8;
 }
 
 *,
 ::before,
 ::after{
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body{
-    height: 100vh;
-    overflow: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .flex{
-    display: flex;
+  display: flex;
 }
 
 .flex-center-all{
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .bc-white{
-    background-color: var(--whitish);
+  background-color: var(--whitish);
 }
 
 .bc-vd-blue{
-    background-color: var(--very-dark-blue);
+  background-color: var(--very-dark-blue);
 }
 
 .bc-d-blue{
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .bc-m-blue{
-    background-color: var(--medium-blue);
+  background-color: var(--medium-blue);
 }
 
 .bc-l-blue{
-    background-color: var(--light-blue);
+  background-color: var(--light-blue);
 }
 
 .c-white{
-    background-color: var(--whitish);
+  color: var(--whitish);
 }
 
 .c-vd-blue{
-    background-color: var(--very-dark-blue);
+  color: var(--very-dark-blue);
 }
 
 .c-d-blue{
-    background-color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 
 .c-m-blue{
-    background-color: var(--medium-blue);
+  color: var(--medium-blue);
 }
 
 .c-l-blue{
-    background-color: var(--light-blue);
+  color: var(--light-blue);
 }
