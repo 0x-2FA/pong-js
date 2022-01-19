@@ -13,6 +13,11 @@
   box-sizing: inherit;
 }
 
+html ::selection{
+  color: var(--dark-blue);
+  background-color: var(--whitish);
+}
+
 body{
   height: 100vh;
   overflow: hidden;
@@ -65,4 +70,16 @@ body{
 
 .c-l-blue{
   color: var(--light-blue);
+}
+
+.font-small{
+  font-size: 1em;
+}
+
+.font-medium{
+  font-size: 2em;
+}
+
+.font-large{
+  font-size: 4em;
 }
