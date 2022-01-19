@@ -1,0 +1,10 @@
+
+body{
+    background-color: var(--very-dark-blue);
+}
+
+.canvas{
+    width: 50em;
+    height: 31.2em;
+    background-color: var(--dark-blue);
+}
