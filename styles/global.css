@@ -27,3 +27,22 @@ body{
     align-items: center;
 }
 
+.bc-white{
+    background-color: var(--whitish);
+}
+
+.bc-vd-blue{
+    background-color: var(--very-dark-blue);
+}
+
+.bc-d-blue{
+    background-color: var(--dark-blue);
+}
+
+.bc-m-blue{
+    background-color: var(--medium-blue);
+}
+
+.bc-l-blue{
+    background-color: var(--light-blue);
+}
