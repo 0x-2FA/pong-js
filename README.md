@@ -5,7 +5,7 @@ Currenlty under development...
 ## TODO List
 
 * [x] Create the project
-* [ ] Make the styles for the entire game
+* [x] Make the styles for the entire game
 * [ ] Make the player paddle
 * [ ] Make the enemy paddle
 * [ ] Make the ball
