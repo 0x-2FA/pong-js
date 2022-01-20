@@ -15,7 +15,7 @@ export default class Paddle
     context.strokeStyle = this.color;
     context.lineWidth = 10;
     
-    context.rect(this.x, this.y - this.height, this.width, this.height);
+    context.rect(this.x, this.y - this.height / 2, this.width, this.height);
     context.stroke();
   }
 }

@@ -9,6 +9,7 @@ const context = canvas.getContext("2d");
 
 const color_whitish = "#F0EBD8";
 
-const player = new Paddle(20, 250, 5, 70, color_whitish);
+const player = new Paddle(20, canvas.height / 2, 5, 70, color_whitish);
+
 
 player.create(context);
