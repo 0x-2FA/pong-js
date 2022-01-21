@@ -9,7 +9,14 @@ const context = canvas.getContext("2d");
 
 const color_whitish = "#F0EBD8";
 
-const player = new Paddle(20, canvas.height / 2, 5, 70, color_whitish);
+const player = new Paddle(20, canvas.height / 2, 12, 75, color_whitish);
 
 
-player.create(context);
+function loop() 
+{
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  player.update(context);
+  requestAnimationFrame(loop);
+}
+
+loop();
