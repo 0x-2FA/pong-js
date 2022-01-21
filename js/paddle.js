@@ -10,12 +10,15 @@ export default class Paddle
     this.color = color;
   }
   
-  create(context)
+  draw(context)
   {
-    context.strokeStyle = this.color;
-    context.lineWidth = 10;
+    context.fillStyle = this.color;
+    context.fillRect(this.x, this.y - (this.height / 2), this.width, this.height);
     
-    context.rect(this.x, this.y - this.height / 2, this.width, this.height);
-    context.stroke();
+  }
+
+  update(context)
+  {
+    this.draw(context);
   }
 }
