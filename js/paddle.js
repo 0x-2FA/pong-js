@@ -1,7 +1,7 @@
 export default class Paddle
 {
   
-  constructor(x, y, width, height, color, speed = 4)
+  constructor(x, y, width, height, color, speed = 4, ch)
   {
     this.x = x;
     this.y = y;
@@ -9,6 +9,7 @@ export default class Paddle
     this.height = height;
     this.color = color;
     this.speed = speed
+    this.ch = ch
   }
   
   draw(context)
@@ -20,7 +21,18 @@ export default class Paddle
   update(dt)
   {
     if (!dt) {return;}
+    
     this.y -= this.speed;
+
+    if (this.y < 0) 
+    {
+      this.y = 0;  
+    }
+
+    if (this.y + this.height > this.ch) 
+    {
+      this.y = this.ch - this.height;
+    }
   }
 
   reset(context)
@@ -28,4 +40,5 @@ export default class Paddle
     context.fillStyle = this.color;
     context.fillRect(this.x, 250 - (this.height / 2), this.width, this.height);
   }
+
 }
