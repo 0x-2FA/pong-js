@@ -1,7 +1,7 @@
 export default class Paddle
 {
   
-  constructor(x, y, width, height, color, speed = 4, ch)
+  constructor(x, y, width, height, ch, color = "#F0EBD8", speed = 8)
   {
     this.x = x;
     this.y = y;

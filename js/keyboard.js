@@ -11,7 +11,6 @@ export default class Keyboard
         case 's':
           player.down();          
           break;
-
       }
     });
   }
