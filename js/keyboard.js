@@ -14,4 +14,19 @@ export default class Keyboard
       }
     });
   }
+
+  keyup(player)
+  {
+    addEventListener('keyup', (event) => {
+      switch (event.key) 
+      {
+        case 'w':
+          player.stop();
+          break;
+        case 's':
+          player.stop();         
+          break;
+      }
+    });
+  }
 }
