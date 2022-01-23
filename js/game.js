@@ -1,4 +1,5 @@
 import Paddle from "./paddle.js";
+import Keyboard from "./keyboard.js"
 
 const canvas = document.getElementById("canvas");
 
@@ -11,11 +12,19 @@ const color_whitish = "#F0EBD8";
 
 const player = new Paddle(20, canvas.height / 2, 12, 75, color_whitish);
 
+player.reset(context);
 
-function loop() 
+let last_frame = 0;
+
+function loop(timestamp) 
 {
+  let dt = timestamp - last_frame;
+  last_frame = timestamp
   context.clearRect(0, 0, canvas.width, canvas.height);
-  player.update(context);
+  
+  player.draw(context);
+  player.update(dt);
+  
   requestAnimationFrame(loop);
 }
 
