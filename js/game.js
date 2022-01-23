@@ -1,4 +1,4 @@
-import Paddle from "./paddle.js";
+import Player from "./player.js"
 import Keyboard from "./keyboard.js"
 
 const canvas = document.getElementById("canvas");
@@ -8,7 +8,7 @@ canvas.height = 500;
 
 const context = canvas.getContext("2d");
 
-const player = new Paddle(20, canvas.height / 2, 12, 75, canvas.height);
+const player = new Player(20, canvas.height / 2, 12, 75, canvas.height);
 
 player.reset();
 
@@ -17,6 +17,7 @@ let last_frame = 0;
 let keyboard = new Keyboard();
 
 keyboard.keydown(player);
+keyboard.keyup(player);
 
 function loop(timestamp) 
 {
