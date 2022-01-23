@@ -35,10 +35,9 @@ export default class Paddle
     }
   }
 
-  reset(context)
+  reset()
   {
-    context.fillStyle = this.color;
-    context.fillRect(this.x, 250 - (this.height / 2), this.width, this.height);
+    this.y = 250 - (this.height / 2);
   }
 
 }

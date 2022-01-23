@@ -10,9 +10,9 @@ const context = canvas.getContext("2d");
 
 const color_whitish = "#F0EBD8";
 
-const player = new Paddle(20, canvas.height / 2, 12, 75, color_whitish);
+const player = new Paddle(20, canvas.height / 2, 12, 75, color_whitish, 4, canvas.height);
 
-player.reset(context);
+player.reset();
 
 let last_frame = 0;
 
