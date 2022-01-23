@@ -8,6 +8,7 @@ export default class Paddle
     this.width = width;
     this.height = height;
     this.color = color;
+    this.velocity = 0;
     this.speed = speed
     this.ch = ch
   }
@@ -22,7 +23,7 @@ export default class Paddle
   {
     if (!dt) {return;}
     
-    this.y -= this.speed;
+    this.y += this.velocity;
 
     if (this.y < 0) 
     {
@@ -33,6 +34,16 @@ export default class Paddle
     {
       this.y = this.ch - this.height;
     }
+  }
+
+  up()
+  {
+    this.velocity = -this.speed;
+  }
+
+  down()
+  {
+    this.velocity = this.speed;
   }
 
   reset()
