@@ -10,11 +10,15 @@ const context = canvas.getContext("2d");
 
 const color_whitish = "#F0EBD8";
 
-const player = new Paddle(20, canvas.height / 2, 12, 75, color_whitish, 4, canvas.height);
+const player = new Paddle(20, canvas.height / 2, 12, 75, color_whitish, 8, canvas.height);
 
 player.reset();
 
 let last_frame = 0;
+
+let keyboard = new Keyboard();
+
+keyboard.keydown(player);
 
 function loop(timestamp) 
 {
