@@ -27,16 +27,16 @@ export default class Player extends Paddle
 
   up()
   {
-      this.velocity = -this.speed;
+    this.velocity = -this.speed;
   }
 
   down()
   {
-      this.velocity = this.speed;
+    this.velocity = this.speed;
   }
 
   stop()
   {
-      this.velocity = 0;
+    this.velocity = 0;
   }
 }
