@@ -6,7 +6,7 @@ Currenlty under development...
 
 * [x] Create the project
 * [x] Make the styles for the entire game
-* [ ] Make the player paddle
+* [x] Make the player paddle
 * [ ] Make the enemy paddle
 * [ ] Make the ball
 * [ ] Import pixel font
