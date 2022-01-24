@@ -11,12 +11,11 @@ export default class Ball
     this.ch = ch;
     this.color = color;
     this.speed = speed;
-    this.velocity = 0;
   }
 
   reset()
   {
-    this.x = canvas.width / 2 - this.r;
+    this.x = canvas.width / 2;
     this.y = canvas.height / 2 - this.r;
   }
 
@@ -26,5 +25,22 @@ export default class Ball
     context.beginPath();
     context.arc(this.x, this.y, this.r, this.s, this.e);
     context.fill();
+  }
+
+  update(dt)
+  {
+    this.y += this.speed;
+
+    if (this.y > this.ch - this.r) 
+    {
+      this.speed = -this.speed;
+    }
+    
+    if (this.y < 0) 
+    {
+      console.log(this.y);
+      this.speed = -this.speed;
+    }
+
   }
 }
