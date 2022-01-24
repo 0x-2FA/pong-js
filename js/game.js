@@ -1,4 +1,5 @@
 import Player from "./player.js"
+import Ball from "./ball.js"
 import Keyboard from "./keyboard.js"
 
 const canvas = document.getElementById("canvas");
@@ -10,7 +11,10 @@ const context = canvas.getContext("2d");
 
 const player = new Player(20, canvas.height / 2, 12, 75, canvas.height);
 
+const ball = new Ball(canvas.width / 2, canvas.height / 2, 15, 0, Math.PI * 2);
+
 player.reset();
+ball.reset();
 
 let last_frame = 0;
 
@@ -27,7 +31,7 @@ function loop(timestamp)
   
   player.draw(context);
   player.update(dt);
-  
+  ball.draw(context);
   requestAnimationFrame(loop);
 }
 
