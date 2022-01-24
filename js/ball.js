@@ -36,7 +36,7 @@ export default class Ball
       this.speed = -this.speed;
     }
     
-    if (this.y < 0) 
+    if (this.y < 0 + this.r) 
     {
       console.log(this.y);
       this.speed = -this.speed;
