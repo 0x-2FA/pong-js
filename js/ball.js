@@ -41,5 +41,10 @@ export default class Ball
       this.speed = -this.speed;
     }
 
+    if (this.x - this.r <= player.x + player.width) 
+    {
+      this.speed = -this.speed;
+    }
+    
   }
 }
