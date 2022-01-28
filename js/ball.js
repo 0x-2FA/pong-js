@@ -1,6 +1,6 @@
 export default class Ball
 {
-  constructor(x, y, r, s, e, cw, ch, color = "#F0EBD8", speed = 8) 
+  constructor(x, y, r, s, e, cw, ch, color = "#F0EBD8", speed = 6) 
   {
     this.x = x;
     this.y = y;
@@ -27,9 +27,9 @@ export default class Ball
     context.fill();
   }
 
-  update(dt)
+  update(dt, player)
   {
-    this.y += this.speed;
+    this.x += -this.speed;
 
     if (this.y > this.ch - this.r) 
     {
@@ -38,7 +38,6 @@ export default class Ball
     
     if (this.y < 0 + this.r) 
     {
-      console.log(this.y);
       this.speed = -this.speed;
     }
 

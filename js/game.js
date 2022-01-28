@@ -32,7 +32,7 @@ function loop(timestamp)
   player.draw(context);
   player.update(dt);
   ball.draw(context);
-  ball.update(dt);
+  ball.update(dt, player);
   requestAnimationFrame(loop);
 }
 
