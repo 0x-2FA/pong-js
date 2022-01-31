@@ -11,7 +11,7 @@ const context = canvas.getContext("2d");
 
 const player = new Player(20, canvas.height / 2, 12, 75, canvas.height);
 
-const ball = new Ball(canvas.width / 2, canvas.height / 2, 15, 0, Math.PI * 2, canvas.width, canvas.height);
+const ball = new Ball(canvas.width / 2, canvas.height / 2, 8, 0, Math.PI * 2, canvas.width, canvas.height);
 
 player.reset();
 ball.reset();
