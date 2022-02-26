@@ -4,7 +4,7 @@ import Keyboard from "./keyboard.js"
 
 const canvas = document.getElementById("canvas");
 
-STATE = {
+let STATE = {
   OVER: 0,
   PLAY: 1,
   PAUSE: 2,
@@ -30,7 +30,19 @@ let keyboard = new Keyboard();
 keyboard.keydown(player);
 keyboard.keyup(player);
 
-game_state = STATE.PLAY;
+let game_state = STATE.PLAY;
+
+let pause_game = () => {
+  if (game_state == STATE.PAUSE) 
+  {
+    game_state = STATE.PLAY;
+  }
+  else
+  {
+    game_state = STATE.PAUSE;
+  }
+}
+
 
 function loop(timestamp) 
 {
@@ -38,6 +50,11 @@ function loop(timestamp)
   last_frame = timestamp
   context.clearRect(0, 0, canvas.width, canvas.height);
   
+  if(game_state == STATE.PAUSE)
+  {
+    return;
+  }
+
   player.draw(context);
   player.update(dt);
   ball.draw(context);
