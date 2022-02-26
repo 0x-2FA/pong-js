@@ -4,6 +4,13 @@ import Keyboard from "./keyboard.js"
 
 const canvas = document.getElementById("canvas");
 
+STATE = {
+  OVER: 0,
+  PLAY: 1,
+  PAUSE: 2,
+  MAIN_MENU: 3
+};
+
 canvas.width = 900;
 canvas.height = 500;
 
@@ -22,6 +29,8 @@ let keyboard = new Keyboard();
 
 keyboard.keydown(player);
 keyboard.keyup(player);
+
+game_state = STATE.PLAY;
 
 function loop(timestamp) 
 {
