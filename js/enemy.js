@@ -5,7 +5,17 @@ export default class Enemy extends Paddle
 
   update(dt, ball)
   {
-    this.y = ball.y;    
+    this.y = ball.y;
+    if (this.y < 0) 
+    {
+      this.y = 0;  
+    }
+
+    if (this.y + this.height > this.game_height) 
+    {
+      this.y = this.game_height - this.height;
+    }
+
   }
 
   up()
