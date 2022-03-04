@@ -8,8 +8,8 @@ Currenlty under development...
 * [x] Make the styles for the entire game
 * [x] Make the player paddle
 * [ ] Make the enemy paddle
-* [ ] Make the ball
+* [x] Make the ball
 * [ ] Import pixel font
 * [ ] Implement a scoring system
 * [ ] Implement menu system
-* [ ] Implement Play/Pause functionality
+* [x] Implement Play/Pause functionality
