@@ -1,6 +1,6 @@
 export default class Keyboard
 {
-  keydown(player, game)
+  keydown(player, game, STATE)
   {
     addEventListener('keydown', (event) => {
       switch (event.key) 
@@ -12,6 +12,14 @@ export default class Keyboard
           player.down();          
           break;
         case 'Escape':
+          if (game.state == STATE.PLAY) 
+          {
+            game.pause();
+          }
+          else
+          {
+            game.unpause();
+          }
           break;
       }
     });

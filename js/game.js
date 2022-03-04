@@ -20,14 +20,19 @@ let game = {
   create: function (canvas_width, canvas_height){
     this.width = canvas_width;
     this.height = canvas_height;
+    
+    this.state = STATE.PLAY;
 
     this.ball = new Ball(canvas.width / 2, canvas.height / 2, 8, 0, Math.PI * 2, this);
     this.player = new Player(20, canvas.height / 2, 12, 75, this);
   },
 
   update: function (dt) {
-    this.player.update(dt);
-    this.ball.update(dt, this.player);
+    if (this.state == STATE.PLAY) 
+    {
+      this.player.update(dt);
+      this.ball.update(dt, this.player);
+    }
   },
 
   draw: function (context) {
@@ -35,18 +40,25 @@ let game = {
     this.ball.draw(context);
   },
 
+  pause: function () {
+    game.state = STATE.PAUSE;
+  },
+
+  unpause: function () {
+    game.state = STATE.PLAY;
+  },
+
 };
 
 game.create(canvas.width, canvas.height);
-// player.reset();
-// ball.reset();
+
 
 let last_frame = 0;
 
 let keyboard = new Keyboard();
 
-keyboard.keydown(game.player);
-keyboard.keyup(game.player);
+keyboard.keydown(game.player, game, STATE);
+keyboard.keyup(game.player, game, STATE);
 
 function loop(timestamp) 
 {
