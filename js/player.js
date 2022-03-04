@@ -14,9 +14,9 @@ export default class Player extends Paddle
       this.y = 0;  
     }
 
-    if (this.y + this.height > this.ch) 
+    if (this.y + this.height > this.game_height) 
     {
-      this.y = this.ch - this.height;
+      this.y = this.game_height - this.height;
     }
   }
 
