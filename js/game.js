@@ -16,6 +16,14 @@ canvas.height = 500;
 
 const context = canvas.getContext("2d");
 
+let game = {
+  create: function (canvas_width, canvas_height){
+    this.width = canvas_width;
+    this.height = canvas_height;
+  },
+
+};
+
 const player = new Player(20, canvas.height / 2, 12, 75, canvas.height);
 
 const ball = new Ball(canvas.width / 2, canvas.height / 2, 8, 0, Math.PI * 2, canvas.width, canvas.height);
@@ -30,30 +38,11 @@ let keyboard = new Keyboard();
 keyboard.keydown(player);
 keyboard.keyup(player);
 
-let game_state = STATE.PLAY;
-
-let pause_game = () => {
-  if (game_state == STATE.PAUSE) 
-  {
-    game_state = STATE.PLAY;
-  }
-  else
-  {
-    game_state = STATE.PAUSE;
-  }
-}
-
-
 function loop(timestamp) 
 {
   let dt = timestamp - last_frame;
   last_frame = timestamp
   context.clearRect(0, 0, canvas.width, canvas.height);
-  
-  if(game_state == STATE.PAUSE)
-  {
-    return;
-  }
 
   player.draw(context);
   player.update(dt);
