@@ -7,9 +7,9 @@ Currenlty under development...
 * [x] Create the project
 * [x] Make the styles for the entire game
 * [x] Make the player paddle
-* [ ] Make the enemy paddle
+* [x] Make the enemy paddle
 * [x] Make the ball
-* [ ] Import pixel font
+* [x] Implement Play/Pause functionality
 * [ ] Implement a scoring system
 * [ ] Implement menu system
-* [x] Implement Play/Pause functionality
+* [ ] Import pixel font
