@@ -31,7 +31,7 @@ export default class Ball
     context.fill();
   }
 
-  update(dt, player)
+  update(dt, player, enemy)
   {
     this.x += this.speed * this.dir.x;
     this.y += this.speed * this.dir.y;
@@ -50,18 +50,23 @@ export default class Ball
     {
       this.dir.x = -this.dir.x
     }
+
+    // collision with the enemy
+    if (this.x - this.r >= enemy.x - enemy.width && this.y > enemy.y && this.y < enemy.y + enemy.height)
+    {
+      this.dir.x = -this.dir.x
+    }
     
   }
 
   radnom_dir_x()
   {
-    let rand = Math.floor(Math.random() * 6) + 2;
+    let rand = Math.floor(Math.random() * 9) + 2;
     let dir = 1;
-    console.log("X: ", dir);
 
     if (rand == 9 || dir == 6 || rand == 3) 
     {
-      dir = -dir;  
+      dir = -dir;
     }
 
     return dir;
@@ -71,11 +76,10 @@ export default class Ball
   {
     let rand = Math.floor(Math.random() * 9) + 2;
     let dir = 1;
-    console.log("Y: ", dir);
 
-    if (dir == 9 || dir == 6 || dir == 3) 
+    if (rand == 9 || rand == 6 || rand == 3) 
     {
-      dir = -dir;  
+      dir = -dir;
     }
 
     return dir;
