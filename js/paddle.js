@@ -10,7 +10,7 @@ export default class Paddle
     this.color = color;
     this.velocity = 0;
     this.speed = speed
-    this.ch = game.height
+    this.game_height = game.height
   }
   
   draw(context)

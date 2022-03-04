@@ -7,8 +7,8 @@ export default class Ball
     this.r = r;
     this.s = s;
     this.e = e;
-    this.cw = game.width;
-    this.ch = game.height;
+    this.game_width = game.width;
+    this.game_height = game.height;
     this.color = color;
     this.speed = speed;
   }
@@ -31,7 +31,7 @@ export default class Ball
   {
     this.x += -this.speed;
 
-    if (this.y > this.ch - this.r) 
+    if (this.y > this.game_height - this.r) 
     {
       this.speed = -this.speed;
     }
