@@ -38,22 +38,24 @@ let game = {
 };
 
 game.create(canvas.width, canvas.height);
-player.reset();
-ball.reset();
+// player.reset();
+// ball.reset();
 
 let last_frame = 0;
 
 let keyboard = new Keyboard();
 
-keyboard.keydown(player);
-keyboard.keyup(player);
+keyboard.keydown(game.player);
+keyboard.keyup(game.player);
 
 function loop(timestamp) 
 {
   let dt = timestamp - last_frame;
   last_frame = timestamp
   context.clearRect(0, 0, canvas.width, canvas.height);
-
+ 
+  game.update(dt);
+  game.draw(context);
   
   requestAnimationFrame(loop);
 }
