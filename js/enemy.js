@@ -1,11 +1,11 @@
 import Paddle from "./paddle.js"
 export default class Enemy extends Paddle
 {
-  super();
+  super(){};
 
-  update(dt)
+  update(dt, ball)
   {
-
+    this.y = ball.y;    
   }
 
   up()
