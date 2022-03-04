@@ -25,8 +25,14 @@ let game = {
     this.player = new Player(20, canvas.height / 2, 12, 75, this);
   },
 
-  update: function () {
-    
+  update: function (dt) {
+    this.player.update(dt);
+    this.ball.update(dt, this.player);
+  },
+
+  draw: function (context) {
+    this.player.draw(context);
+    this.ball.draw(context);
   },
 
 };
@@ -48,10 +54,7 @@ function loop(timestamp)
   last_frame = timestamp
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  player.draw(context);
-  player.update(dt);
-  ball.draw(context);
-  ball.update(dt, player);
+  
   requestAnimationFrame(loop);
 }
 
