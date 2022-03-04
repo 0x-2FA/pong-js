@@ -21,13 +21,17 @@ let game = {
     this.width = canvas_width;
     this.height = canvas_height;
 
-    let ball = new Ball(canvas.width / 2, canvas.height / 2, 8, 0, Math.PI * 2, this);
-    let player = new Player(20, canvas.height / 2, 12, 75, this);
+    this.ball = new Ball(canvas.width / 2, canvas.height / 2, 8, 0, Math.PI * 2, this);
+    this.player = new Player(20, canvas.height / 2, 12, 75, this);
+  },
 
+  update: function () {
+    
   },
 
 };
 
+game.create(canvas.width, canvas.height);
 player.reset();
 ball.reset();
 
