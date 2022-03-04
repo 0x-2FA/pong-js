@@ -1,6 +1,6 @@
 export default class Keyboard
 {
-  keydown(player)
+  keydown(player, game)
   {
     addEventListener('keydown', (event) => {
       switch (event.key) 
@@ -11,11 +11,13 @@ export default class Keyboard
         case 's':
           player.down();          
           break;
+        case 'Escape':
+          break;
       }
     });
   }
 
-  keyup(player)
+  keyup(player, game)
   {
     addEventListener('keyup', (event) => {
       switch (event.key) 
