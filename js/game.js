@@ -1,4 +1,5 @@
 import Player from "./player.js"
+import Enemy from "./enemy.js"
 import Ball from "./ball.js"
 import Keyboard from "./keyboard.js"
 
@@ -25,18 +26,21 @@ let game = {
 
     this.ball = new Ball(canvas.width / 2, canvas.height / 2, 8, 0, Math.PI * 2, this);
     this.player = new Player(20, canvas.height / 2, 12, 75, this);
+    this.enemy = new Enemy(canvas.width - 32, canvas.height / 2, 12, 75, this);
   },
 
   update: function (dt) {
     if (this.state == STATE.PLAY) 
     {
       this.player.update(dt);
+      this.enemy.update(dt, this.ball);
       this.ball.update(dt, this.player);
     }
   },
 
   draw: function (context) {
     this.player.draw(context);
+    this.enemy.draw(context);
     this.ball.draw(context);
   },
 
