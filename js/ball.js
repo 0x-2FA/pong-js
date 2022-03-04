@@ -11,6 +11,10 @@ export default class Ball
     this.game_height = game.height;
     this.color = color;
     this.speed = speed;
+    this.dir = {
+      x: this.radnom_dir_x(),
+      y: this.radnom_dir_y()
+    }
   }
 
   reset()
@@ -29,22 +33,51 @@ export default class Ball
 
   update(dt, player)
   {
-    this.x += -this.speed;
+    this.x += this.speed * this.dir.x;
+    this.y += this.speed * this.dir.y;
 
     if (this.y > this.game_height - this.r) 
     {
-      this.speed = -this.speed;
+      this.dir.y = -this.dir.y;
     }
     
     if (this.y < 0 + this.r) 
     {
-      this.speed = -this.speed;
+      this.dir.y = -this.dir.y;
     }
 
     if (this.x - this.r <= player.x + player.width && this.y > player.y && this.y < player.y + player.height)
     {
-      this.speed = -this.speed;
+      this.dir.x = -this.dir.x
     }
     
+  }
+
+  radnom_dir_x()
+  {
+    let rand = Math.floor(Math.random() * 6) + 2;
+    let dir = 1;
+    console.log("X: ", dir);
+
+    if (rand == 9 || dir == 6 || rand == 3) 
+    {
+      dir = -dir;  
+    }
+
+    return dir;
+  }
+
+  radnom_dir_y()
+  {
+    let rand = Math.floor(Math.random() * 9) + 2;
+    let dir = 1;
+    console.log("Y: ", dir);
+
+    if (dir == 9 || dir == 6 || dir == 3) 
+    {
+      dir = -dir;  
+    }
+
+    return dir;
   }
 }
