@@ -1,14 +1,14 @@
 export default class Ball
 {
-  constructor(x, y, r, s, e, cw, ch, color = "#F0EBD8", speed = 6) 
+  constructor(x, y, r, s, e, game, color = "#F0EBD8", speed = 6) 
   {
     this.x = x;
     this.y = y;
     this.r = r;
     this.s = s;
     this.e = e;
-    this.cw = cw;
-    this.ch = ch;
+    this.cw = game.width;
+    this.ch = game.height;
     this.color = color;
     this.speed = speed;
   }

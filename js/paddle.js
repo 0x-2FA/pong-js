@@ -1,7 +1,7 @@
 export default class Paddle
 {
   
-  constructor(x, y, width, height, ch, color = "#F0EBD8", speed = 8)
+  constructor(x, y, width, height, game, color = "#F0EBD8", speed = 8)
   {
     this.x = x;
     this.y = y;
@@ -10,7 +10,7 @@ export default class Paddle
     this.color = color;
     this.velocity = 0;
     this.speed = speed
-    this.ch = ch
+    this.ch = game.height
   }
   
   draw(context)
