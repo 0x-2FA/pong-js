@@ -34,7 +34,7 @@ let game = {
     {
       this.player.update(dt);
       this.enemy.update(dt, this.ball);
-      this.ball.update(dt, this.player);
+      this.ball.update(dt, this.player, this.enemy);
     }
   },
 
