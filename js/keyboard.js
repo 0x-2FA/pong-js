@@ -6,9 +6,11 @@ export default class Keyboard
       switch (event.key) 
       {
         case 'w':
+        case 'ArrowUp':
           player.up();  
           break;
         case 's':
+        case 'ArrowDown':
           player.down();          
           break;
         case 'Escape':
@@ -31,9 +33,11 @@ export default class Keyboard
       switch (event.key) 
       {
         case 'w':
+        case 'ArrowUp':
           player.stop();
           break;
         case 's':
+        case 'ArrowDown':
           player.stop();         
           break;
       }
